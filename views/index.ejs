@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Cadastro Usuário</title>
+        </head>
+    <body style="background-color: #DCDCDC;">
+        <H1>Bem vindo á página</H1>
+        <p>Nessa disciplina, estudamos IHC, desenvolvimento web, desenvolvimento para mobile e jogos.</p>
+        <p>Agora estamos em web</p>
+        <hr>
+            <form action="/cadastrar" method="POST">
+                <div style="border: groove;padding: 10px;">
+                    <label style="padding: 5px;">Dados</label>
+                <div style="padding: 5px;">
+                  <label>Nome: </label>
+                  <input id="nome" type="text" name="nome" placeholder="Nome">
+                </div>
+                <div style="padding: 5px;">
+                  <label>E-mail: </label>
+                  <input id="email" type="text" name="email" placeholder="E-mail">
+                </div>
+                    <div style="padding: 5px;">
+                    <label>Curso: </label>
+                    <input class="cp" type="radio" name="curso" value="Computação">
+                    <label>Ciencia da computação </label>
+                    <input class="ads" type="radio" name="curso" value="ADS">
+                    <label>ADS </label>
+                    <input class="si" type="radio" name="curso" value="SI">
+                    <label>SI </label>
+                    </div>
+                </div>
+                <div style="display: flex;">
+                    <button style="margin-top: 5px;" type="submit">Enviar</button>
+                    <div style="margin-top: 5px;border: solid 1px grey;padding: 5px;margin-left: 10px;border-radius: 2px;background-color: whitesmoke;" onclick="limparCmapos()">Limpar</div>
+                </div>
+              </form>
+              <footer style="position: fixed;bottom: 0;width: 98%;background-color: #696969;margin-bottom: 15px;color: white;font-family: monospace; font-size: larger;">
+                Copyrigth by aluno 2022
+            </footer>
+    </body>
+
+    <script>
+        
+    function limparCmapos(){
+        const cursoCP = document.getElementsByClassName("cp")
+        const cursoAds = document.getElementsByClassName("ads")
+        const cursoSi = document.getElementsByClassName("si")
+
+        document.getElementById("email").value = ""
+        document.getElementById("nome").value = ""
+
+        if(cursoCP[0].checked){
+            cursoAluno = cursoCP[0].value
+        }else if(cursoAds[0].checked){
+            cursoAluno = cursoAds[0].value
+        }else if(cursoSi[0].checked){
+            cursoAluno = cursoSi[0].value
+        }
+        cursoCP[0].checked = false
+        cursoAds[0].checked = false
+        cursoSi[0].checked = false
+    }
+    </script>
+</html>

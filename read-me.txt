@@ -1,0 +1,1 @@
+Para iniciar a aplicação basta dar o comando npm run dev e passar a url http://localhost:3000
