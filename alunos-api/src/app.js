@@ -1,8 +1,6 @@
 import express from 'express' //importacao do pacote
 const app = express() //instanciando express
 import cors from 'cors'
-import { nomeAluno } from '../../alunos-front/index.js'
-console.log(nomeAluno) // 'variableValue'
 
 const alunos = [
   {

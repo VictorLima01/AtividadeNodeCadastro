@@ -1,14 +1,7 @@
-export const nomeAluno = "bata";
-import axios from 'axios';
+let nomeAluno;
 let emailAluno;
 let cursoAluno;
 
-/*axios.get('http://localhost:3000/api/v1/alunos')
-.then(response => criaListaDinamica(response.data))
-.catch(error => console.log(error))
-*/
-
-export default { nomeAluno: nomeAluno } 
 
 const nome = document.getElementById("nome")
 const email = document.getElementById("email")
@@ -28,17 +21,17 @@ function myFunction(){
   }else if(cursoSi[0].checked){
     cursoAluno = cursoSi[0].value
   }
+
+  document.getElementById("nomeAluno").innerHTML = '<label>' + nomeAluno + '</label>'
+  document.getElementById("emailAluno").innerHTML = '<label>' + emailAluno + '</label>'
+  document.getElementById("cursoAluno").innerHTML = '<label>' + cursoAluno + '</label>'
+
 }
 
-axios.get('http://localhost:3000/api/v1/alunos')
-.then(response => trazerDadosAluno(response.data))
-.catch(error => console.log(error))
-
-const trazerDadosAluno = ( dados ) => {
-const ulAlunos = document.getElementById('alunos')
-alunos.map(aluno => {
-  const listaAluno = document.createElement('li')
-  listaAluno.innerHTML = `Nome: ${aluno.nome}`
-  ulAlunos.appendChild(listaAluno)
-})
+function limparCmapos(){
+    email.value = ""
+    nome.value = ""
+    cursoCP[0].checked = false
+    cursoAds[0].checked = false
+    cursoSi[0].checked = false
 }
